@@ -120,7 +120,7 @@ main {
 
   &--round {
     display: flex;
-    border-radius: 50%;;
+    border-radius: 50%;
   }
 
   &--primary {
