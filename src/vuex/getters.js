@@ -1,6 +1,6 @@
 const getters = {
-  TOTAL_PRICE(state) {
-    return state.cartTotalPrice;
+  ACTIVITIES_ON_PAGE(state) {
+    return state.activitiesOnPage;
   },
 
   QUANTITY_ITEMS_IN_CART(state) {

@@ -2,8 +2,9 @@
   <nav class="pagination">
     <ul class="pagination__list">
       <li class="pagination__item">
-        <a
-          class="pagination__link pagination__link_arrow"
+        <button
+          class="pagination__link pagination__link_arrow prevPage"
+          prev-page
           @click="prevPage"
         >
           <svg
@@ -24,7 +25,7 @@
               points="22.9427745 22.9999999 19 26.9458774 20.0541226 28 25.0541226 23 20.0541226 18 19 19.0541226"
             />
           </svg>
-        </a>
+        </button>
       </li>
       <li
         v-for="(page, idx) of paginationList"
@@ -33,6 +34,7 @@
       >
         <a
           class="pagination__link"
+          direct-page-link
           :data-page="page.pageString"
           @click="idx !== 3
             ? directMoveToPage(page.pageNumber)
@@ -44,6 +46,7 @@
       <li class="pagination__item">
         <a
           class="pagination__link pagination__link_arrow"
+          next-page
           @click="nextPage"
         >
           <svg
@@ -72,18 +75,17 @@
 <script>
 import { mapGetters } from 'vuex';
 
-const activitiesOnPage = 6;
-
 export default {
   emits: ['prevPage', 'nextPage', 'directPage'],
 
   computed: {
     ...mapGetters([
-      'TOTAL_ACTIVITIES'
+      'TOTAL_ACTIVITIES',
+      'ACTIVITIES_ON_PAGE'
     ]),
 
     totalPossiblePages() {
-      return Math.round(this.TOTAL_ACTIVITIES / activitiesOnPage);
+      return Math.round(this.TOTAL_ACTIVITIES / this.ACTIVITIES_ON_PAGE);
     },
 
     totalPossiblePagesArray() {

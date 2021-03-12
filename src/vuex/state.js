@@ -1,5 +1,5 @@
 const state = {
-  cartTotalPrice: 4100,
+  activitiesOnPage: 6,
   cartItems: [],
   wishlistItems: [],
   activitiesList: []
