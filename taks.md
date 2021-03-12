@@ -24,7 +24,7 @@ With the ["Guidelines"](#Guidelines) section in mind, you should complete at lea
 
 [ ] Unit testing on functions and components where you think it's appropriate
 
-[ ] [optional] Build a mini-bag with convenient actions, coherent with design. Example of a mini-bag is included within the images folder but you must develop a mini-bag that’s coherent with the page’s design.
+[x] [optional] Build a mini-bag with convenient actions, coherent with design. Example of a mini-bag is included within the images folder but you must develop a mini-bag that’s coherent with the page’s design.
 
 
 

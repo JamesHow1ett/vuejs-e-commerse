@@ -29,7 +29,9 @@
           </span>
         </div>
         <div class="bag-item__btn">
-          <button @click="removeActivity(product.uuid)">X</button>
+          <button @click="removeActivity(product.uuid)">
+            X
+          </button>
         </div>
       </div>
     </div>
