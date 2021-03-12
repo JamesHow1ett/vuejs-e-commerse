@@ -16,6 +16,14 @@ const actions = {
 
   addActivityToCart({ commit }, activityData) {
     return commit(mutationCommit.saveActivityToCartList, activityData)
+  },
+
+  openCloseBag({ commit }) {
+    return commit(mutationCommit.openCloseBag);
+  },
+
+  removeActivityFromCart({ commit }, activityUUID) {
+    return commit(mutationCommit.removeActivityFromCart, activityUUID);
   }
 }
 

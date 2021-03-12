@@ -33,6 +33,10 @@ const getters = {
     }, 0)
 
     return totalPrice;
+  },
+
+  IS_BAG_OPEN(state) {
+    return state.isBagOpen;
   }
 }
 

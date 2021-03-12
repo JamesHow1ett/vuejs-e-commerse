@@ -89,12 +89,6 @@ export default {
     }
   },
 
-  data() {
-    return {
-      uuidH: 'dc99d6d9-8cf3-4983-968e-e503907ca029'
-    }
-  },
-
   computed: {
     ...mapGetters([
       'WISHLIST_LIST',
@@ -137,7 +131,8 @@ export default {
         id: uuid,
         title: title,
         price: value,
-        imgSrc: cover_image_url
+        imgSrc: cover_image_url,
+        quantity: 1
       }
 
       return this.addActivityToCart(productData);

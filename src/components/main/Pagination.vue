@@ -2,8 +2,8 @@
   <nav class="pagination">
     <ul class="pagination__list">
       <li class="pagination__item">
-        <button
-          class="pagination__link pagination__link_arrow prevPage"
+        <a
+          class="pagination__link pagination__link_arrow"
           prev-page
           @click="prevPage"
         >
@@ -25,7 +25,7 @@
               points="22.9427745 22.9999999 19 26.9458774 20.0541226 28 25.0541226 23 20.0541226 18 19 19.0541226"
             />
           </svg>
-        </button>
+        </a>
       </li>
       <li
         v-for="(page, idx) of paginationList"

@@ -66,9 +66,9 @@ Please refer to [this page](https://api-docs.musement.com/reference#get_activiti
 
 ## Extra credit 
 
-* Use CSS preprocessors
+* [x] Use CSS preprocessors
 
-* Use of linting tools
+* [x] Use of linting tools
 
 * E2E testing
 
@@ -76,7 +76,7 @@ Please refer to [this page](https://api-docs.musement.com/reference#get_activiti
 
 * Fast page load
 
-* Optimized user experience
+* [x] Optimized user experience
 
 * Statically typed code
 

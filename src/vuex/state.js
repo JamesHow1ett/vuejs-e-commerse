@@ -1,4 +1,5 @@
 const state = {
+  isBagOpen: false,
   activitiesOnPage: 6,
   cartItems: [],
   wishlistItems: [],

@@ -23,8 +23,6 @@ import { mapActions, mapGetters } from 'vuex';
 import ProductItem from './ProductItem.vue';
 import Pagination from './Pagination.vue';
 
-const activitiesOnPage = 6;
-
 export default {
   components: {
     ProductItem,
@@ -39,15 +37,16 @@ export default {
 
   computed: {
     ...mapGetters([
-      'ACTIVITIES_LIST'
+      'ACTIVITIES_LIST',
+      'ACTIVITIES_ON_PAGE'
     ]),
 
     startPagination() {
-      return (this.page - 1) * activitiesOnPage;
+      return (this.page - 1) * this.ACTIVITIES_ON_PAGE;
     },
 
     endPagination() {
-      return (this.page * activitiesOnPage);
+      return this.page * this.ACTIVITIES_ON_PAGE;
     },
 
     pagitatedActivities() {
@@ -65,7 +64,7 @@ export default {
         null,
         document.title,
         `${window.location.pathname}?page=${this.page}`
-      )
+      );
     }
   },
 

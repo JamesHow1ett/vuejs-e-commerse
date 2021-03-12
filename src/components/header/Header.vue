@@ -16,6 +16,7 @@
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
+          @click="openBag"
         >
           <title>Bag Icon</title>
           <path
@@ -48,19 +49,38 @@
         <span class="bag__item-counter">{{ QUANTITY_ITEMS_IN_WISHLIST }}</span>
       </div>
     </aside>
+    <Bag v-if="isBagOpen" />
   </header>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
+
+import Bag from './Bag.vue';
 
 export default {
+  components: {
+    Bag
+  },
   computed: {
     ...mapGetters([
       'TOTAL_ACTIVITIES_PRICE',
       'QUANTITY_ITEMS_IN_CART',
-      'QUANTITY_ITEMS_IN_WISHLIST'
-    ])
+      'QUANTITY_ITEMS_IN_WISHLIST',
+      'IS_BAG_OPEN'
+    ]),
+
+    isBagOpen() {
+      return this.IS_BAG_OPEN && this.QUANTITY_ITEMS_IN_CART > 0;
+    }
+  },
+
+  methods: {
+    ...mapActions(['openCloseBag']),
+
+    openBag() {
+      return this.openCloseBag();
+    }
   }
 }
 </script>
@@ -70,6 +90,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: relative;
 }
 
 .page-title {

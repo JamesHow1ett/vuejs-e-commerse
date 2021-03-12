@@ -1,6 +1,6 @@
 const mutations = {
   saveLoadedActivitiesToStore: (state, activities) => {
-    state.activitiesList = activities
+    state.activitiesList = activities;
   },
 
   saveRemoveActivityInWishlist: (state, activityUUID) => {
@@ -8,7 +8,7 @@ const mutations = {
       state.wishlistItems.push(activityUUID);
     } else {
       const findActivityIndex = state.wishlistItems.findIndex(uuid => {
-        return uuid === activityUUID
+        return uuid === activityUUID;
       });
 
       state.wishlistItems.splice(findActivityIndex, 1);
@@ -21,16 +21,28 @@ const mutations = {
     if (!state.cartItems.some(similarID)) {
       state.cartItems.push(activityData);
     }
+  },
+
+  openCloseBag: (state) => {
+    state.isBagOpen = !state.isBagOpen;
+  },
+
+  removeActivityFromCart: (state, activityUUID) => {
+    const findActivityIndex = state.cartItems.findIndex(uuid => {
+      return uuid === activityUUID;
+    });
+
+    state.cartItems.splice(findActivityIndex, 1);
   }
 }
 
 const commitMutatiosAction = () => {
   const mutationCommit = {}
-  const mutationsKeys = Object.keys(mutations)
+  const mutationsKeys = Object.keys(mutations);
 
-  mutationsKeys.forEach(key => mutationCommit[key] = key)
+  mutationsKeys.forEach(key => mutationCommit[key] = key);
 
-  return mutationCommit
+  return mutationCommit;
 }
 
 export { commitMutatiosAction }
