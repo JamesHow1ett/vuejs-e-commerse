@@ -1,5 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import store from './store'
+import { createApp } from 'vue';
+import App from './App.vue';
+import store from './vuex/store.js';
 
-createApp(App).use(store).mount('#app')
+const eCommerceApp = createApp(App);
+
+eCommerceApp.use(store);
+eCommerceApp.mount('#app');
