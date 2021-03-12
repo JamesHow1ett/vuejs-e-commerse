@@ -40,7 +40,7 @@ body {
   flex-direction: column;
   flex: 1 0 auto;
 
-  font-family: 'Lato-Regular', sans-serif;
+  // font-family: 'Lato-Regular', sans-serif;
   font-size: 13px;
   text-rendering: optimizeLegibility;
 
@@ -119,7 +119,7 @@ main {
   transition: .3s border, .3s color, .3s background-color;
 
   &--round {
-    display: block;
+    display: flex;
     border-radius: 50%;;
   }
 
